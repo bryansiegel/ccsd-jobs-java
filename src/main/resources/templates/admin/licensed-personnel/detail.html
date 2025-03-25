@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Licensed Personnel Details</title>
+</head>
+<body>
+<h1>Licensed Personnel Details</h1>
+<p>ID: <span th:text="${licensedPersonnel.id}">ID</span></p>
+<p>Job Code: <span th:text="${licensedPersonnel.jobCode}">Job Code</span></p>
+<p>Classification: <span th:text="${licensedPersonnel.classification}">Classification</span></p>
+<p>Terms of Employment: <span th:text="${licensedPersonnel.termsOfEmployment}">Terms of Employment</span></p>
+<p>FLSA Status: <span th:text="${licensedPersonnel.flsaStatus}">FLSA Status</span></p>
+<p>Position Summary: <span th:text="${licensedPersonnel.positionSummary}">Position Summary</span></p>
+<p>Essential Duties and Responsibilities: <span th:text="${licensedPersonnel.essentialDutiesAndResponsibilities}">Essential Duties and Responsibilities</span></p>
+<p>Position Expectations: <span th:text="${licensedPersonnel.positionExpectations}">Position Expectations</span></p>
+<p>Position Requirements: <span th:text="${licensedPersonnel.positionRequirements}">Position Requirements</span></p>
+<a th:href="@{/admin/licensed-personnel}">Back to List</a>
+</body>
+</html>

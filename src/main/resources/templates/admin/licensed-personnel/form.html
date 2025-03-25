@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create/Update Licensed Personnel</title>
+</head>
+<body>
+<h1>Create/Update Licensed Personnel</h1>
+<form th:action="@{/admin/licensed-personnel}" th:object="${licensedPersonnel}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <div>
+        <label>Job Code:</label>
+        <input type="text" th:field="*{jobCode}" />
+    </div>
+    <div>
+        <label>Classification:</label>
+        <input type="text" th:field="*{classification}" />
+    </div>
+    <div>
+        <label>Terms of Employment:</label>
+        <input type="text" th:field="*{termsOfEmployment}" />
+    </div>
+    <div>
+        <label>FLSA Status:</label>
+        <input type="text" th:field="*{flsaStatus}" />
+    </div>
+    <div>
+        <label>Position Summary:</label>
+        <input type="text" th:field="*{positionSummary}" />
+    </div>
+    <div>
+        <label>Essential Duties and Responsibilities:</label>
+        <input type="text" th:field="*{essentialDutiesAndResponsibilities}" />
+    </div>
+    <div>
+        <label>Position Expectations:</label>
+        <input type="text" th:field="*{positionExpectations}" />
+    </div>
+    <div>
+        <label>Position Requirements:</label>
+        <input type="text" th:field="*{positionRequirements}" />
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/admin/licensed-personnel}">Back to List</a>
+</body>
+</html>
