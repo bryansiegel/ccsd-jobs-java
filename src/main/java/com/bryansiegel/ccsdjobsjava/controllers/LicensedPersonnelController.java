@@ -64,6 +64,7 @@ public class LicensedPersonnelController {
         if (licensedPersonnel.isPresent()) {
             LicensedPersonnel updatedLicensedPersonnel = licensedPersonnel.get();
             updatedLicensedPersonnel.setJobCode(licensedPersonnelDetails.getJobCode());
+            updatedLicensedPersonnel.setClassification(licensedPersonnelDetails.getDivision());
             updatedLicensedPersonnel.setClassification(licensedPersonnelDetails.getClassification());
             updatedLicensedPersonnel.setTermsOfEmployment(licensedPersonnelDetails.getTermsOfEmployment());
             updatedLicensedPersonnel.setFlsaStatus(licensedPersonnelDetails.getFlsaStatus());
