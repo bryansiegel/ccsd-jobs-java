@@ -64,7 +64,9 @@ public class AdministrativePersonnelController {
         if (administrativePersonnel.isPresent()) {
             AdministrativePersonnel updatedAdministrativePersonnel = administrativePersonnel.get();
             updatedAdministrativePersonnel.setJobCode(administrativePersonnelDetails.getJobCode());
+            updatedAdministrativePersonnel.setReferenceCode(administrativePersonnelDetails.getReferenceCode());
             updatedAdministrativePersonnel.setClassification(administrativePersonnelDetails.getClassification());
+            updatedAdministrativePersonnel.setDivisionUnit(administrativePersonnelDetails.getDivisionUnit());
             updatedAdministrativePersonnel.setTermsOfEmployment(administrativePersonnelDetails.getTermsOfEmployment());
             updatedAdministrativePersonnel.setFlsaStatus(administrativePersonnelDetails.getFlsaStatus());
             updatedAdministrativePersonnel.setPositionSummary(administrativePersonnelDetails.getPositionSummary());
