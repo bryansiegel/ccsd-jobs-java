@@ -4,8 +4,13 @@
 <head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
 <div th:insert="~{admin/fragments/header}"></div>
 
-<h1>Licensed Personnel Details</h1>
-<p>ID: <span th:text="${licensedPersonnel.id}">ID</span></p>
+<div class="row">
+    <div class="col">
+
+        <h1>Licensed Personnel Details</h1>
+        <a th:href="@{/admin/licensed-personnel}" class="btn btn-warning mb-3">Back to List</a>
+
+        <p>ID: <span th:text="${licensedPersonnel.id}">ID</span></p>
 <p>Job Code: <span th:text="${licensedPersonnel.jobCode}">Job Code</span></p>
 <p>Division: <span th:text="${licensedPersonnel.division}">Job Code</span></p>
 <p>Classification: <span th:text="${licensedPersonnel.classification}">Classification</span></p>
@@ -15,6 +20,7 @@
 <p>Essential Duties and Responsibilities: <span th:text="${licensedPersonnel.essentialDutiesAndResponsibilities}">Essential Duties and Responsibilities</span></p>
 <p>Position Expectations: <span th:text="${licensedPersonnel.positionExpectations}">Position Expectations</span></p>
 <p>Position Requirements: <span th:text="${licensedPersonnel.positionRequirements}">Position Requirements</span></p>
-<a th:href="@{/admin/licensed-personnel}">Back to List</a>
+    </div>
+</div>
 
 <footer th:insert="~{public/fragments/footer}"></footer>

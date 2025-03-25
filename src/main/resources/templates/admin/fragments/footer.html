@@ -22,6 +22,14 @@
 <!--<script src="/js/dashboard.js"></script>-->
 <script src="/js/htmx.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#detailsTable').DataTable();
+    });
+</script>
+
 <!--<script src="dashboard.js"></script>-->
 <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();

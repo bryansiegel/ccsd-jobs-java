@@ -4,8 +4,12 @@
 <head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
 <div th:insert="~{admin/fragments/header}"></div>
 
+<div class="row">
+    <div class="col">
 <h1>Support Professional Details</h1>
-<p>ID: <span th:text="${supportProfessional.id}">ID</span></p>
+        <a th:href="@{/admin/support-professionals}" class="btn btn-warning mb-3">Back to List</a>
+
+        <p>ID: <span th:text="${supportProfessional.id}">ID</span></p>
 <p>Class Code: <span th:text="${supportProfessional.classCode}">Class Code</span></p>
 <p>Job Family: <span th:text="${supportProfessional.jobFamily}">Job Family</span></p>
 <p>Classification: <span th:text="${supportProfessional.classification}">Classification</span></p>
@@ -20,6 +24,7 @@
 <p>Examples of Assigned Work Areas: <span th:text="${supportProfessional.examplesOfAssignedWorkAreas}">Examples of Assigned Work Areas</span></p>
 <p>Work Environment: <span th:text="${supportProfessional.workEnvironment}">Work Environment</span></p>
 <p>Equipment and Supplies Used to Perform Tasks: <span th:text="${supportProfessional.equipmentSuppliesUsedToPerformTasks}">Equipment and Supplies Used to Perform Tasks</span></p>
-<a th:href="@{/admin/support-professionals}">Back to List</a>
+    </div>
+</div>
 
-<footer th:insert="~{public/fragments/footer}"></footer>
+<footer th:insert="~{admin/fragments/footer}"></footer>

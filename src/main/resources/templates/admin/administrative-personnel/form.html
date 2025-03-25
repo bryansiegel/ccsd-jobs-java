@@ -4,55 +4,60 @@
 <head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
 <div th:insert="~{admin/fragments/header}"></div>
 
+<div class="row pb-5">
+    <div class="col">
 <h1>Create/Update Administrative Personnel</h1>
-
-<form th:action="@{/admin/administrative-personnel}" th:object="${administrativePersonnel}" method="post">
+        <a th:href="@{/admin/administrative-personnel}" class="btn btn-warning">Back to List</a>
+<form th:action="@{/admin/administrative-personnel}" th:object="${administrativePersonnel}" method="post" class="form pt-3">
     <input type="hidden" th:field="*{id}" />
-    <div>
-        <label>Job Code:</label>
-        <input type="text" th:field="*{jobCode}" />
+
+    <div class="form-group">
+        <label class="form-label">Job Code:</label>
+        <input type="text" th:field="*{jobCode}" class="form-control" />
     </div>
-    <div>
-        <label>Reference Code:</label>
-        <input type="text" th:field="*{referenceCode}" />
+    <div class="form-group">
+        <label class="form-label">Reference Code:</label>
+        <input type="text" th:field="*{referenceCode}" class="form-control" />
     </div>
-    <div>
-        <label>Classification:</label>
-        <input type="text" th:field="*{classification}" />
+    <div class="form-group">
+        <label class="form-label">Classification:</label>
+        <input type="text" th:field="*{classification}" class="form-control" />
     </div>
-    <div>
-        <label>Division Unit:</label>
-        <input type="text" th:field="*{divisionUnit}" />
+    <div class="form-group">
+        <label class="form-label">Division Unit:</label>
+        <input type="text" th:field="*{divisionUnit}" class="form-control" />
     </div>
 
-    <div>
-        <label>Terms of Employment:</label>
-        <input type="text" th:field="*{termsOfEmployment}" />
+    <div class="form-group">
+        <label class="form-label">Terms of Employment:</label>
+        <input type="text" th:field="*{termsOfEmployment}" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">FLSA Status:</label>
+        <input type="text" th:field="*{flsaStatus}" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Position Summary:</label>
+        <input type="text" th:field="*{positionSummary}" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Essential Duties and Responsibilities:</label>
+        <input type="text" th:field="*{essentialDutiesAndResponsibilities}" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Position Expectations:</label>
+        <input type="text" th:field="*{positionExpectations}" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Position Requirements:</label>
+        <input type="text" th:field="*{positionRequirements}" class="form-control" />
     </div>
     <div>
-        <label>FLSA Status:</label>
-        <input type="text" th:field="*{flsaStatus}" />
-    </div>
-    <div>
-        <label>Position Summary:</label>
-        <input type="text" th:field="*{positionSummary}" />
-    </div>
-    <div>
-        <label>Essential Duties and Responsibilities:</label>
-        <input type="text" th:field="*{essentialDutiesAndResponsibilities}" />
-    </div>
-    <div>
-        <label>Position Expectations:</label>
-        <input type="text" th:field="*{positionExpectations}" />
-    </div>
-    <div>
-        <label>Position Requirements:</label>
-        <input type="text" th:field="*{positionRequirements}" />
-    </div>
-    <div>
-        <button type="submit">Save</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </form>
-<a th:href="@{/admin/administrative-personnel}">Back to List</a>
 
-<footer th:insert="~{public/fragments/footer}"></footer>
+    </div>
+</div>
+
+<footer th:insert="~{admin/fragments/footer}"></footer>

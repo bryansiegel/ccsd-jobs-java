@@ -4,69 +4,74 @@
 <head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
 <div th:insert="~{admin/fragments/header}"></div>
 
+<div class="row pb-5">
+    <div class="col">
 <h1>Create/Update Support Professional</h1>
-<form th:action="@{/admin/support-professionals}" th:object="${supportProfessional}" method="post">
+        <a th:href="@{/admin/support-professionals}" class="btn btn-warning mb-3">Back to List</a>
+
+        <form th:action="@{/admin/support-professionals}" th:object="${supportProfessional}" method="post" class="form">
     <input type="hidden" th:field="*{id}" />
-    <div>
-        <label>Class Code:</label>
-        <input type="text" th:field="*{classCode}" />
+    <div class="form-group">
+        <label class="form-label">Class Code:</label>
+        <input type="text" th:field="*{classCode}" class="form-control" />
     </div>
-    <div>
-        <label>Job Family:</label>
-        <input type="text" th:field="*{jobFamily}" />
+    <div class="form-group">
+        <label class="form-label">Job Family:</label>
+        <input type="text" th:field="*{jobFamily}" class="form-control" />
     </div>
-    <div>
-        <label>Classification:</label>
-        <input type="text" th:field="*{classification}" />
+    <div class="form-group">
+        <label class="form-label">Classification:</label>
+        <input type="text" th:field="*{classification}" class="form-control" />
     </div>
-    <div>
-        <label>Terms of Employment:</label>
-        <input type="text" th:field="*{termsOfEmployment}" />
+    <div class="form-group">
+        <label class="form-label">Terms of Employment:</label>
+        <input type="text" th:field="*{termsOfEmployment}" class="form-control" />
     </div>
-    <div>
-        <label>FLSA Status:</label>
-        <input type="text" th:field="*{flsaStatus}" />
+    <div class="form-group">
+        <label class="form-label">FLSA Status:</label>
+        <input type="text" th:field="*{flsaStatus}" class="form-control" />
     </div>
-    <div>
-        <label>Position Summary:</label>
-        <input type="text" th:field="*{positionSummary}" />
+    <div class="form-group">
+        <label class="form-label">Position Summary:</label>
+        <input type="text" th:field="*{positionSummary}" class="form-control" />
     </div>
-    <div>
-        <label>Duties and Responsibilities:</label>
-        <input type="text" th:field="*{dutiesAndResponsibilities}" />
+    <div class="form-group">
+        <label class="form-label">Duties and Responsibilities:</label>
+        <input type="text" th:field="*{dutiesAndResponsibilities}" class="form-control" />
     </div>
-    <div>
-        <label>Distinguishing Characteristics:</label>
-        <input type="text" th:field="*{distinguishingCharacteristics}" />
+    <div class="form-group">
+        <label class="form-label">Distinguishing Characteristics:</label>
+        <input type="text" th:field="*{distinguishingCharacteristics}" class="form-control" />
     </div>
-    <div>
-        <label>Knowledge, Skills, and Abilities:</label>
-        <input type="text" th:field="*{knowledgeSkillsAbilities}" />
+    <div class="form-group">
+        <label class="form-label">Knowledge, Skills, and Abilities:</label>
+        <input type="text" th:field="*{knowledgeSkillsAbilities}" class="form-control" />
     </div>
-    <div>
-        <label>Position Requirements:</label>
-        <input type="text" th:field="*{positionRequirements}" />
+    <div class="form-group">
+        <label class="form-label">Position Requirements:</label>
+        <input type="text" th:field="*{positionRequirements}" class="form-control" />
     </div>
-    <div>
-        <label>Documents Required at Time of Application:</label>
-        <input type="text" th:field="*{documentsRequiredAtTimeOfApplication}" />
+    <div class="form-group">
+        <label class="form-label">Documents Required at Time of Application:</label>
+        <input type="text" th:field="*{documentsRequiredAtTimeOfApplication}" class="form-control" />
     </div>
-    <div>
-        <label>Examples of Assigned Work Areas:</label>
-        <input type="text" th:field="*{examplesOfAssignedWorkAreas}" />
+    <div class="form-group">
+        <label class="form-label">Examples of Assigned Work Areas:</label>
+        <input type="text" th:field="*{examplesOfAssignedWorkAreas}" class="form-control" />
     </div>
-    <div>
-        <label>Work Environment:</label>
-        <input type="text" th:field="*{workEnvironment}" />
+    <div class="form-group">
+        <label class="form-label">Work Environment:</label>
+        <input type="text" th:field="*{workEnvironment}" class="form-control" />
     </div>
-    <div>
-        <label>Equipment and Supplies Used to Perform Tasks:</label>
-        <input type="text" th:field="*{equipmentSuppliesUsedToPerformTasks}" />
+    <div class="form-group">
+        <label class="form-label">Equipment and Supplies Used to Perform Tasks:</label>
+        <input type="text" th:field="*{equipmentSuppliesUsedToPerformTasks}" class="form-control" />
     </div>
-    <div>
-        <button type="submit">Save</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </form>
-<a th:href="@{/admin/support-professionals}">Back to List</a>
+    </div>
+</div>
 
-<footer th:insert="~{public/fragments/footer}"></footer>
+<footer th:insert="~{admin/fragments/footer}"></footer>

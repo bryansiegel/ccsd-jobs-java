@@ -4,49 +4,55 @@
 <head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
 <div th:insert="~{admin/fragments/header}"></div>
 
+<div class="row pb-5">
+    <div class="col">
 <h1>Create/Update Licensed Personnel</h1>
-<form th:action="@{/admin/licensed-personnel}" th:object="${licensedPersonnel}" method="post">
+        <a th:href="@{/admin/licensed-personnel}" class="btn btn-warning mb-3">Back to List</a>
+
+        <form th:action="@{/admin/licensed-personnel}" th:object="${licensedPersonnel}" method="post" class="form">
     <input type="hidden" th:field="*{id}" />
-    <div>
-        <label>Job Code:</label>
-        <input type="text" th:field="*{jobCode}" />
+    <div class="form-group">
+        <label class="form-label">Job Code:</label>
+        <input type="text" th:field="*{jobCode}" class="form-control" />
     </div>
-    <div>
-        <label>Division:</label>
-        <input type="text" th:field="*{division}" />
+    <div class="form-group">
+        <label class="form-label">Division:</label>
+        <input type="text" th:field="*{division}" class="form-control" />
     </div>
-    <div>
-        <label>Classification:</label>
-        <input type="text" th:field="*{classification}" />
+    <div class="form-group">
+        <label class="form-label">Classification:</label>
+        <input type="text" th:field="*{classification}" class="form-control" />
     </div>
-    <div>
-        <label>Terms of Employment:</label>
-        <input type="text" th:field="*{termsOfEmployment}" />
+    <div class="form-group">
+        <label class="form-label">Terms of Employment:</label>
+        <input type="text" th:field="*{termsOfEmployment}" class="form-control" />
     </div>
-    <div>
-        <label>FLSA Status:</label>
-        <input type="text" th:field="*{flsaStatus}" />
+    <div class="form-group">
+        <label class="form-label">FLSA Status:</label>
+        <input type="text" th:field="*{flsaStatus}" class="form-control" />
     </div>
-    <div>
-        <label>Position Summary:</label>
-        <input type="text" th:field="*{positionSummary}" />
+    <div class="form-group">
+        <label class="form-label">Position Summary:</label>
+        <input type="text" th:field="*{positionSummary}" class="form-control" />
     </div>
-    <div>
-        <label>Essential Duties and Responsibilities:</label>
-        <input type="text" th:field="*{essentialDutiesAndResponsibilities}" />
+    <div class="form-group">
+        <label class="form-label">Essential Duties and Responsibilities:</label>
+        <input type="text" th:field="*{essentialDutiesAndResponsibilities}" class="form-control" />
     </div>
-    <div>
-        <label>Position Expectations:</label>
-        <input type="text" th:field="*{positionExpectations}" />
+    <div class="form-group">
+        <label class="form-label">Position Expectations:</label>
+        <input type="text" th:field="*{positionExpectations}" class="form-control" />
     </div>
-    <div>
-        <label>Position Requirements:</label>
-        <input type="text" th:field="*{positionRequirements}" />
+    <div class="form-group">
+        <label class="form-label">Position Requirements:</label>
+        <input type="text" th:field="*{positionRequirements}" class="form-control" />
     </div>
-    <div>
-        <button type="submit">Save</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </form>
-<a th:href="@{/admin/licensed-personnel}">Back to List</a>
+
+    </div>
+</div>
 
 <footer th:insert="~{public/fragments/footer}"></footer>

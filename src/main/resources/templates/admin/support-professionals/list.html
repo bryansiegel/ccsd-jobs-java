@@ -5,8 +5,10 @@
 <div th:insert="~{admin/fragments/header}"></div>
 
 <h1>Support Professionals</h1>
-<a th:href="@{/admin/support-professionals/new}">Create New</a>
-<table>
+<a th:href="@{/admin/support-professionals/new}" class="btn btn-primary">Create New</a>
+<div class="row pt-3">
+    <div class="col">
+        <table id="detailsTable" class="table table-striped table-hover">
     <thead>
     <tr>
         <th>ID</th>
@@ -21,12 +23,14 @@
         <td th:text="${supportProfessional.classCode}">Class Code</td>
         <td th:text="${supportProfessional.jobFamily}">Job Family</td>
         <td>
-            <a th:href="@{/admin/support-professionals/{id}(id=${supportProfessional.id})}">View</a>
-            <a th:href="@{/admin/support-professionals/edit/{id}(id=${supportProfessional.id})}">Edit</a>
-            <a th:href="@{/admin/support-professionals/delete/{id}(id=${supportProfessional.id})}">Delete</a>
+            <a th:href="@{/admin/support-professionals/{id}(id=${supportProfessional.id})}" class="btn btn-info">View</a>
+            <a th:href="@{/admin/support-professionals/edit/{id}(id=${supportProfessional.id})}" class="btn btn-warning">Edit</a>
+            <a th:href="@{/admin/support-professionals/delete/{id}(id=${supportProfessional.id})}" class="btn btn-danger">Delete</a>
         </td>
     </tr>
     </tbody>
 </table>
+    </div>
+</div>
 
-<footer th:insert="~{public/fragments/footer}"></footer>
+<footer th:insert="~{admin/fragments/footer}"></footer>
