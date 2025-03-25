@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Licensed Personnel Details</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
 <h1>Licensed Personnel Details</h1>
 <p>ID: <span th:text="${licensedPersonnel.id}">ID</span></p>
 <p>Job Code: <span th:text="${licensedPersonnel.jobCode}">Job Code</span></p>
@@ -16,5 +16,5 @@
 <p>Position Expectations: <span th:text="${licensedPersonnel.positionExpectations}">Position Expectations</span></p>
 <p>Position Requirements: <span th:text="${licensedPersonnel.positionRequirements}">Position Requirements</span></p>
 <a th:href="@{/admin/licensed-personnel}">Back to List</a>
-</body>
-</html>
+
+<footer th:insert="~{public/fragments/footer}"></footer>

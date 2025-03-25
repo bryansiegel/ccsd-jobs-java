@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Create/Update Licensed Personnel</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
 <h1>Create/Update Licensed Personnel</h1>
 <form th:action="@{/admin/licensed-personnel}" th:object="${licensedPersonnel}" method="post">
     <input type="hidden" th:field="*{id}" />
@@ -48,5 +48,5 @@
     </div>
 </form>
 <a th:href="@{/admin/licensed-personnel}">Back to List</a>
-</body>
-</html>
+
+<footer th:insert="~{public/fragments/footer}"></footer>

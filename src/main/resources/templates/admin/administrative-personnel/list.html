@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Administrative Personnel</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
 <h1>Administrative Personnel</h1>
 <a th:href="@{/admin/administrative-personnel/new}">Create New</a>
 <table>
@@ -27,5 +27,6 @@
     </tr>
     </tbody>
 </table>
-</body>
-</html>
+
+
+<footer th:insert="~{public/fragments/footer}"></footer>

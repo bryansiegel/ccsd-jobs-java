@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Support Professional Details</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
 <h1>Support Professional Details</h1>
 <p>ID: <span th:text="${supportProfessional.id}">ID</span></p>
 <p>Class Code: <span th:text="${supportProfessional.classCode}">Class Code</span></p>
@@ -21,5 +21,5 @@
 <p>Work Environment: <span th:text="${supportProfessional.workEnvironment}">Work Environment</span></p>
 <p>Equipment and Supplies Used to Perform Tasks: <span th:text="${supportProfessional.equipmentSuppliesUsedToPerformTasks}">Equipment and Supplies Used to Perform Tasks</span></p>
 <a th:href="@{/admin/support-professionals}">Back to List</a>
-</body>
-</html>
+
+<footer th:insert="~{public/fragments/footer}"></footer>

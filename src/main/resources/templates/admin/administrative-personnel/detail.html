@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Administrative Personnel Details</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{admin/fragments/head}"><title>Administrative Personnel Details</title></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
 <h1>Administrative Personnel Details</h1>
+
+
+
 <p>ID: <span th:text="${administrativePersonnel.id}">ID</span></p>
 <p>Job Code: <span th:text="${administrativePersonnel.jobCode}">Job Code</span></p>
 <p>Division: <span th:text="${administrativePersonnel.divisionUnit}">Division</span></p>
@@ -16,5 +19,6 @@
 <p>Position Expectations: <span th:text="${administrativePersonnel.positionExpectations}">Position Expectations</span></p>
 <p>Position Requirements: <span th:text="${administrativePersonnel.positionRequirements}">Position Requirements</span></p>
 <a th:href="@{/admin/administrative-personnel}">Back to List</a>
-</body>
-</html>
+
+
+<footer th:insert="~{public/fragments/footer}"></footer>
