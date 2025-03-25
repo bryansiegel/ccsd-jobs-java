@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create/Update Support Professional</title>
+</head>
+<body>
+<h1>Create/Update Support Professional</h1>
+<form th:action="@{/admin/support-professionals}" th:object="${supportProfessional}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <div>
+        <label>Class Code:</label>
+        <input type="text" th:field="*{classCode}" />
+    </div>
+    <div>
+        <label>Job Family:</label>
+        <input type="text" th:field="*{jobFamily}" />
+    </div>
+    <div>
+        <label>Classification:</label>
+        <input type="text" th:field="*{classification}" />
+    </div>
+    <div>
+        <label>Terms of Employment:</label>
+        <input type="text" th:field="*{termsOfEmployment}" />
+    </div>
+    <div>
+        <label>FLSA Status:</label>
+        <input type="text" th:field="*{flsaStatus}" />
+    </div>
+    <div>
+        <label>Position Summary:</label>
+        <input type="text" th:field="*{positionSummary}" />
+    </div>
+    <div>
+        <label>Duties and Responsibilities:</label>
+        <input type="text" th:field="*{dutiesAndResponsibilities}" />
+    </div>
+    <div>
+        <label>Distinguishing Characteristics:</label>
+        <input type="text" th:field="*{distinguishingCharacteristics}" />
+    </div>
+    <div>
+        <label>Knowledge, Skills, and Abilities:</label>
+        <input type="text" th:field="*{knowledgeSkillsAbilities}" />
+    </div>
+    <div>
+        <label>Position Requirements:</label>
+        <input type="text" th:field="*{positionRequirements}" />
+    </div>
+    <div>
+        <label>Documents Required at Time of Application:</label>
+        <input type="text" th:field="*{documentsRequiredAtTimeOfApplication}" />
+    </div>
+    <div>
+        <label>Examples of Assigned Work Areas:</label>
+        <input type="text" th:field="*{examplesOfAssignedWorkAreas}" />
+    </div>
+    <div>
+        <label>Work Environment:</label>
+        <input type="text" th:field="*{workEnvironment}" />
+    </div>
+    <div>
+        <label>Equipment and Supplies Used to Perform Tasks:</label>
+        <input type="text" th:field="*{equipmentSuppliesUsedToPerformTasks}" />
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/admin/support-professionals}">Back to List</a>
+</body>
+</html>

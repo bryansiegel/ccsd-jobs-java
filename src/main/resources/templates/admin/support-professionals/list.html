@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Support Professionals</title>
+</head>
+<body>
+<h1>Support Professionals</h1>
+<a th:href="@{/admin/support-professionals/new}">Create New</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Class Code</th>
+        <th>Job Family</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="supportProfessional : ${supportProfessionals}">
+        <td th:text="${supportProfessional.id}">ID</td>
+        <td th:text="${supportProfessional.classCode}">Class Code</td>
+        <td th:text="${supportProfessional.jobFamily}">Job Family</td>
+        <td>
+            <a th:href="@{/admin/support-professionals/{id}(id=${supportProfessional.id})}">View</a>
+            <a th:href="@{/admin/support-professionals/edit/{id}(id=${supportProfessional.id})}">Edit</a>
+            <a th:href="@{/admin/support-professionals/delete/{id}(id=${supportProfessional.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
