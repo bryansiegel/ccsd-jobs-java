@@ -1,29 +1,35 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head th:insert="~{admin/fragments/head}"><title>Create/Update Administrative Personnel</title></head>
 <div th:insert="~{admin/fragments/header}"></div>
 
 <div class="row">
     <div class="col">
-<h1>Support Professional Details</h1>
+        <h1>Support Professional Details</h1>
         <a th:href="@{/admin/support-professionals}" class="btn btn-warning mb-3">Back to List</a>
 
         <p>ID: <span th:text="${supportProfessional.id}">ID</span></p>
-<p>Class Code: <span th:text="${supportProfessional.classCode}">Class Code</span></p>
-<p>Job Family: <span th:text="${supportProfessional.jobFamily}">Job Family</span></p>
-<p>Classification: <span th:text="${supportProfessional.classification}">Classification</span></p>
-<p>Terms of Employment: <span th:text="${supportProfessional.termsOfEmployment}">Terms of Employment</span></p>
-<p>FLSA Status: <span th:text="${supportProfessional.flsaStatus}">FLSA Status</span></p>
-<p>Position Summary: <span th:text="${supportProfessional.positionSummary}">Position Summary</span></p>
-<p>Duties and Responsibilities: <span th:text="${supportProfessional.dutiesAndResponsibilities}">Duties and Responsibilities</span></p>
-<p>Distinguishing Characteristics: <span th:text="${supportProfessional.distinguishingCharacteristics}">Distinguishing Characteristics</span></p>
-<p>Knowledge, Skills, and Abilities: <span th:text="${supportProfessional.knowledgeSkillsAbilities}">Knowledge, Skills, and Abilities</span></p>
-<p>Position Requirements: <span th:text="${supportProfessional.positionRequirements}">Position Requirements</span></p>
-<p>Documents Required at Time of Application: <span th:text="${supportProfessional.documentsRequiredAtTimeOfApplication}">Documents Required at Time of Application</span></p>
-<p>Examples of Assigned Work Areas: <span th:text="${supportProfessional.examplesOfAssignedWorkAreas}">Examples of Assigned Work Areas</span></p>
-<p>Work Environment: <span th:text="${supportProfessional.workEnvironment}">Work Environment</span></p>
-<p>Equipment and Supplies Used to Perform Tasks: <span th:text="${supportProfessional.equipmentSuppliesUsedToPerformTasks}">Equipment and Supplies Used to Perform Tasks</span></p>
+        <p>Class Code: <span th:text="${supportProfessional.classCode}">Class Code</span></p>
+        <p>Job Family: <span th:text="${supportProfessional.jobFamily}">Job Family</span></p>
+        <p>Classification: <span th:text="${supportProfessional.classification}">Classification</span></p>
+        <p>Terms of Employment: <span th:text="${supportProfessional.termsOfEmployment}">Terms of Employment</span></p>
+        <p>FLSA Status: <span th:text="${supportProfessional.flsaStatus}">FLSA Status</span></p>
+        <p>Position Summary: <span th:text="${supportProfessional.positionSummary}">Position Summary</span></p>
+        <p>Duties and Responsibilities: <span th:text="${supportProfessional.dutiesAndResponsibilities}">Duties and Responsibilities</span>
+        </p>
+        <p>Distinguishing Characteristics: <span th:text="${supportProfessional.distinguishingCharacteristics}">Distinguishing Characteristics</span>
+        </p>
+        <p>Knowledge, Skills, and Abilities: <span th:text="${supportProfessional.knowledgeSkillsAbilities}">Knowledge, Skills, and Abilities</span>
+        </p>
+        <p>Position Requirements: <span
+                th:text="${supportProfessional.positionRequirements}">Position Requirements</span></p>
+        <p>Documents Required at Time of Application: <span
+                th:text="${supportProfessional.documentsRequiredAtTimeOfApplication}">Documents Required at Time of Application</span>
+        </p>
+        <p>Examples of Assigned Work Areas: <span th:text="${supportProfessional.examplesOfAssignedWorkAreas}">Examples of Assigned Work Areas</span>
+        </p>
+        <p>Work Environment: <span th:text="${supportProfessional.workEnvironment}">Work Environment</span></p>
+        <p>Equipment and Supplies Used to Perform Tasks: <span
+                th:text="${supportProfessional.equipmentSuppliesUsedToPerformTasks}">Equipment and Supplies Used to Perform Tasks</span>
+        </p>
     </div>
 </div>
 
