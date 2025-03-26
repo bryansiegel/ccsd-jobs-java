@@ -7,7 +7,10 @@
         <a th:href="@{/admin/administrative-personnel}" class="btn btn-warning">Back to List</a>
 <form th:action="@{/admin/administrative-personnel}" th:object="${administrativePersonnel}" method="post" class="form pt-3">
     <input type="hidden" th:field="*{id}" />
-
+    <div class="form-group">
+        <label class="form-label">Job Title:</label>
+        <input type="text" th:field="*{jobTitle}" class="form-control" />
+    </div>
     <div class="form-group">
         <label class="form-label">Job Code:</label>
         <input type="text" th:field="*{jobCode}" class="form-control" />

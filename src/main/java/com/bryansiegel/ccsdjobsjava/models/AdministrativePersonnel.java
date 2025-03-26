@@ -15,6 +15,7 @@ public class AdministrativePersonnel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String jobTitle;
     private String jobCode;
     private String referenceCode;
     private String divisionUnit;
@@ -36,6 +37,14 @@ public class AdministrativePersonnel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     public String getJobCode() {
@@ -138,6 +147,7 @@ public class AdministrativePersonnel {
     public String toString() {
         return "AdministrativePersonnel{" +
                 "id=" + id +
+                ", jobTitle='" + jobTitle + '\'' +
                 ", jobCode='" + jobCode + '\'' +
                 ", referenceCode='" + referenceCode + '\'' +
                 ", divisionUnit='" + divisionUnit + '\'' +

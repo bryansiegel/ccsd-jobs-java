@@ -63,6 +63,7 @@ public class AdministrativePersonnelController {
         Optional<AdministrativePersonnel> administrativePersonnel = administrativePersonnelRepo.findById(id);
         if (administrativePersonnel.isPresent()) {
             AdministrativePersonnel updatedAdministrativePersonnel = administrativePersonnel.get();
+            updatedAdministrativePersonnel.setJobTitle(administrativePersonnelDetails.getJobTitle());
             updatedAdministrativePersonnel.setJobCode(administrativePersonnelDetails.getJobCode());
             updatedAdministrativePersonnel.setReferenceCode(administrativePersonnelDetails.getReferenceCode());
             updatedAdministrativePersonnel.setClassification(administrativePersonnelDetails.getClassification());

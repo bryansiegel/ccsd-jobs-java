@@ -19,6 +19,7 @@
         </thead>
         <tbody>
         <tr v-for="admin in administrativePersonnel" :key="admin.id">
+            <td>{{ admin.jobTitle}}</td>
             <td>{{ admin.classification }}</td>
             <td>{{ admin.jobCode }}</td>
             <td>{{ admin.referenceCode }}</td>
