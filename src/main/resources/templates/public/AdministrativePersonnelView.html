@@ -1,38 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
+<head th:insert="~{public/fragments/head}">
     <title>Administrative Personnel Details</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <div id="app">
-    <h1>Administrative Personnel Details</h1>
-    <div v-if="administrativePersonnel">
-        <h2>Title: {{ administrativePersonnel.jobTitle }}</h2>
-        <h3>Job Code: {{ administrativePersonnel.jobCode }}</h3>
-        <h3>Reference Code: {{ administrativePersonnel.referenceCode }}</h3>
-        <h3>Division/Unit: {{ administrativePersonnel.divisionUnit }}</h3>
-        <h3>Classification: {{ administrativePersonnel.classification }}</h3>
-        <h3>Terms of Employment: {{ administrativePersonnel.termsOfEmployment }}</h3>
-        <h3>FLSA Status: {{ administrativePersonnel.flsaStatus }}</h3>
-        <h3>Position Summary:</h3>
-        <p>{{ administrativePersonnel.positionSummary }}</p>
-        <h3>Essential Duties and Responsibilities:</h3>
-        <ul>
-            <li v-for="duty in administrativePersonnel.essentialDutiesAndResponsibilities.split(',')" :key="duty">{{ duty }}</li>
-        </ul>
-        <h3>Position Expectations:</h3>
-        <ul>
-            <li v-for="expectation in administrativePersonnel.positionExpectations.split(',')" :key="expectation">{{ expectation }}</li>
-        </ul>
-        <h3>Position Requirements:</h3>
-        <ul>
-            <li v-for="requirement in administrativePersonnel.positionRequirements.split(',')" :key="requirement">{{ requirement }}</li>
-        </ul>
-    </div>
-    <div v-else>
-        <p>Loading...</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="margin-left:200px;" v-if="administrativePersonnel">
+                    <h2>{{ administrativePersonnel.jobTitle }}</h2>
+                    <h3>Job Code: {{ administrativePersonnel.jobCode }}</h3>
+                    <h3>Reference Code: {{ administrativePersonnel.referenceCode }}</h3>
+                    <h3>Division/Unit: {{ administrativePersonnel.divisionUnit }}</h3>
+                    <h3>Classification: {{ administrativePersonnel.classification }}</h3>
+                    <h3>Terms of Employment: {{ administrativePersonnel.termsOfEmployment }}</h3>
+                    <h3>FLSA Status: {{ administrativePersonnel.flsaStatus }}</h3>
+                    <h3>Position Summary:</h3>
+                    <p>{{ administrativePersonnel.positionSummary }}</p>
+                    <h3>Essential Duties and Responsibilities:</h3>
+                    <ul>
+                        <li v-for="duty in administrativePersonnel.essentialDutiesAndResponsibilities.split(',')"
+                            :key="duty">{{ duty }}
+                        </li>
+                    </ul>
+                    <h3>Position Expectations:</h3>
+                    <ul>
+                        <li v-for="expectation in administrativePersonnel.positionExpectations.split(',')"
+                            :key="expectation">{{ expectation }}
+                        </li>
+                    </ul>
+                    <h3>Position Requirements:</h3>
+                    <ul>
+                        <li v-for="requirement in administrativePersonnel.positionRequirements.split(',')"
+                            :key="requirement">{{ requirement }}
+                        </li>
+                    </ul>
+                </div>
+                <div v-else>
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
@@ -59,5 +67,4 @@
         }
     });
 </script>
-</body>
-</html>
+<footer th:insert="~{public/fragments/footer}"></footer>

@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Administrative Personnel</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<head th:insert="~{public/fragments/head}"><title>Administrative Personnel</title>
 </head>
-<body>
+
 <div id="app">
     <h1>Administrative Personnel</h1>
     <table>
@@ -58,5 +53,4 @@
         }
     });
 </script>
-</body>
-</html>
+<footer th:insert="~{public/fragments/footer}"></footer>
