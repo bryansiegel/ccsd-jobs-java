@@ -35,7 +35,12 @@
             administrativePersonnel: []
         },
         created() {
-            axios.get('/api/administrative-personnel')
+            axios.get('/api/administrative-personnel', {
+                auth: {
+                    username: 'user',
+                    password: 'password'
+                }
+            })
                 .then(response => {
                     this.administrativePersonnel = response.data;
                 })
