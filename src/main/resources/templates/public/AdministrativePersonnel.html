@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrative Personnel</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Administrative Personnel</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Classification</th>
+            <th>Job Code</th>
+            <th>Reference Code</th>
+            <th>FLSA Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="admin in administrativePersonnel" :key="admin.id">
+            <td>{{ admin.classification }}</td>
+            <td>{{ admin.jobCode }}</td>
+            <td>{{ admin.referenceCode }}</td>
+            <td>{{ admin.flsaStatus }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            administrativePersonnel: []
+        },
+        created() {
+            axios.get('/api/administrative-personnel')
+                .then(response => {
+                    this.administrativePersonnel = response.data;
+                })
+                .catch(error => {
+                    console.error('There was an error fetching the data:', error);
+                });
+        }
+    });
+</script>
+</body>
+</html>
