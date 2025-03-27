@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class PublicController {
 
+    @GetMapping("/")
+    public String index() {
+        return "/public/index.html";
+    }
+
     @GetMapping("/administrative-personnel")
     public String getAllAdministrativePersonnel() {
         return "/public/AdministrativePersonnel.html";
