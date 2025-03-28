@@ -8,6 +8,7 @@ This is a Spring Boot application for managing administrative personnel data. Th
 - Spring Boot
 - Maven
 - Thymeleaf
+- Vue
 - Mockito
 - JUnit
 - MySQL
