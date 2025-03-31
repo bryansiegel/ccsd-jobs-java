@@ -2,15 +2,11 @@ package com.bryansiegel.ccsdjobsjava.controllers;
 
 import com.bryansiegel.ccsdjobsjava.models.AdministrativePersonnel;
 import com.bryansiegel.ccsdjobsjava.repositories.AdministrativePersonnelRepo;
-import com.bryansiegel.ccsdjobsjava.services.ExportExcelService;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,9 +16,6 @@ public class AdministrativePersonnelController {
 
     @Autowired
     private AdministrativePersonnelRepo administrativePersonnelRepo;
-
-    @Autowired
-    private ExportExcelService excelExportService;
 
     @GetMapping
     public String getAllAdministrativePersonnel(Model model) {
@@ -97,16 +90,5 @@ public class AdministrativePersonnelController {
         } else {
             return "/admin/administrative-personnel/not-found";
         }
-    }
-
-    //Export Excel
-    @GetMapping("/export/excel")
-    @ResponseBody
-    public void exportToExcel(HttpServletResponse response) throws IOException {
-        response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment; filename=administrative_personnel.xlsx");
-        List<AdministrativePersonnel> personnelList = administrativePersonnelRepo.findAll();
-        ByteArrayInputStream stream = excelExportService.exportToExcel(personnelList);
-        org.apache.commons.io.IOUtils.copy(stream, response.getOutputStream());
     }
 }
