@@ -7,6 +7,7 @@ import com.bryansiegel.ccsdjobsjava.services.ExportPDFService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -40,8 +41,14 @@ public class PublicController {
     }
 
     @GetMapping("/administrative-personnel/{id}")
-    public String getAllAdministrativePersonnel(@PathVariable("id") String id) {
-        return "/public/AdministrativePersonnelView.html";
+    public String getAllAdministrativePersonnel(@PathVariable("id") Long id, Model model) {
+        Optional<AdministrativePersonnel> personnel = administrativePersonnelRepo.findById(id);
+        if (personnel.isPresent()) {
+            model.addAttribute("administrativePersonnel", personnel.get());
+            return "/public/AdministrativePersonnelView.html";
+        } else {
+            return "error/404";
+        }
     }
 
     //Export Excel
@@ -56,14 +63,14 @@ public class PublicController {
     }
 
     // Export PDF
-    @GetMapping("/administrative-personnel/export/pdf/{id}")
+    @GetMapping("/administrative-personnel/{id}/export/pdf")
     @ResponseBody
     public void exportToPdfById(@PathVariable("id") Long id, HttpServletResponse response) throws IOException {
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "attachment; filename=administrative_personnel_" + id + ".pdf");
         Optional<AdministrativePersonnel> personnel = administrativePersonnelRepo.findById(id);
         if (personnel.isPresent()) {
-            ByteArrayInputStream stream = exportPDFService.exportToPdf(List.of(personnel.get()));
+            ByteArrayInputStream stream = exportPDFService.exportToPdf(personnel.get());
             org.apache.commons.io.IOUtils.copy(stream, response.getOutputStream());
         } else {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Administrative Personnel not found");
