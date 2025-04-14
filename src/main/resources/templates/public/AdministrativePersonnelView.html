@@ -3,11 +3,13 @@
 </head>
 <body>
 <div class="row">
-    <div class="col">
+    <div class="col" style="background-color: #eeeeee; padding-top: 10px; padding-bottom: 10px; padding-left: 50px; margin-bottom: 150px; position: fixed; top: 0; width: 100%; z-index: 1000;">
         <a th:href="@{/administrative-personnel/{id}/export/pdf(id=${administrativePersonnel.id})}" class="btn btn-danger">Export To PDF</a>
+        <a href="/administrative-personnel" class="btn btn-primary"><< Back to Administrative Personnel</a>
+
     </div>
 </div>
-<div id="app">
+<div id="app" class="pt-5 mt-5">
     <administrative-personnel-view></administrative-personnel-view>
 </div>
 

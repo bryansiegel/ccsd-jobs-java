@@ -1,38 +1,46 @@
-// src/main/resources/static/js/components/AdministrativePersonnelViewComponent.js
 Vue.component('administrative-personnel-view', {
     template: `
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mb-5">
+                <div style="margin-left:200px;margin-bottom: 20px;">
+                    <img src="/img/ccsd-email-logo.png" alt="Logo" width="120" height="80" >
+               </div>
                     <div style="margin-left:200px;" v-if="administrativePersonnel">
-                        <h1>{{ administrativePersonnel.jobTitle }}</h1>
-                        <h3>Job Code:</h3>
-                        <span>{{ administrativePersonnel.jobCode }}</span>
-                        <h3>Reference Code:</h3>
-                        <span>{{ administrativePersonnel.referenceCode }}</span>
-                        
-                        <h3>Division/Unit:</h3>
-                        <span>{{ administrativePersonnel.divisionUnit }}</span>
-                        
-                        <h3>Classification:</h3>
-                        <span>{{ administrativePersonnel.classification }}</span>
-                        
-                        <h3>Terms of Employment:</h3>
-                        <span v-html="administrativePersonnel.termsOfEmployment"></span>
-
-                        <h3>FLSA Status:</h3>
-                        <span> {{ administrativePersonnel.flsaStatus }}</span>
-                        
-                        <h3>Position Summary:</h3>
+                        <h1 style="color: #1771B7;font-size: 32px;font-weight:bold;padding-bottom: 25px;">{{ administrativePersonnel.jobTitle }}</h1>
+                        <h2 style="color: #214A7E;font-size: 20px;font-weight:bold;">Position Details</h2>
+                        Job Code: {{ administrativePersonnel.jobCode }}<br>
+                        Reference Code: {{ administrativePersonnel.referenceCode }}<br>
+                        Division/Unit: {{ administrativePersonnel.divisionUnit }}<br>
+                        Classification: {{ administrativePersonnel.classification }}<br>
+                        Terms of Employment: <span v-html="administrativePersonnel.termsOfEmployment"></span><br>
+                        FLSA Status: {{ administrativePersonnel.flsaStatus }}
+                        <hr>
+                        <h3  style="color: #214A7E;font-size: 20px;font-weight:bold;">Position Summary:</h3>
                         <span v-html="administrativePersonnel.positionSummary"></span>
-
-                        <h3>Essential Duties and Responsibilities:</h3>
+<hr>
+                        <h3  style="color: #214A7E;font-size: 20px;font-weight:bold;">Essential Duties and Responsibilities:</h3>
                         <span v-html="administrativePersonnel.essentialDutiesAndResponsibilities"></span>
-
-                        <h3>Position Expectations:</h3>
+                        <hr>
+                        <h3  style="color: #214A7E;font-size: 20px;font-weight:bold;">Position Expectations:</h3>
                         <span v-html="administrativePersonnel.positionExpectations"></span>
-                        <h3>Position Requirements:</h3>
+                        <hr>
+                        <h3 style="color: #214A7E;font-size: 20px;font-weight:bold;">Position Requirements:</h3>
                         <span v-html="administrativePersonnel.positionRequirements"></span>
+                        <hr>
+                        <h3 style="color: #214A7E;font-size: 20px;font-weight:bold;">AA/EOE Statement</h3>
+                        <p>The Clark County School District is proud to be an equal opportunity employer. The
+Clark County School District is committed to providing all applicants and employees
+equal employment opportunities without regard to race, color, religion, sex, gender
+identity or expression, sexual orientation, national origin, genetics, disability, age, military
+status, or other characteristics protected by applicable law. Here at Clark County School
+District, we are a diverse group of people who honor the differences that drive innovative
+solutions to meet the needs of our students and employees. We believe that through a
+culture of inclusivity, we have the power to reflect the community we serve.</p>
+<hr>
+                        <h3 style="color: #214A7E;font-size: 20px;font-weight:bold;">Job Revision Information</h3>
+                          Created At: {{ formattedCreatedAt }}<br>
+                          Updated At: {{ formattedUpdatedAt }}
                     </div>
                     <div v-else>
                         <p>Loading...</p>
@@ -45,6 +53,34 @@ Vue.component('administrative-personnel-view', {
         return {
             administrativePersonnel: null
         };
+    },
+    computed: {
+        formattedCreatedAt() {
+            if (this.administrativePersonnel && this.administrativePersonnel.createdAt) {
+                return new Intl.DateTimeFormat('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }).format(new Date(this.administrativePersonnel.createdAt));
+            }
+            return '';
+        },
+        formattedUpdatedAt() {
+            if (this.administrativePersonnel && this.administrativePersonnel.updatedAt) {
+                return new Intl.DateTimeFormat('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }).format(new Date(this.administrativePersonnel.updatedAt));
+            }
+            return '';
+        }
     },
     created() {
         const id = window.location.pathname.split('/').pop();
