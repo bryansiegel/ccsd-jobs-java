@@ -1,4 +1,7 @@
 // src/main/resources/static/js/components/AdministrativePersonnelComponent.js
+
+// TODO: Add datatables
+
 Vue.component('administrative-personnel', {
     template: `
                 <div class="container">

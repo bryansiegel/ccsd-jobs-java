@@ -18,6 +18,8 @@ public class ExportPDFService {
         PdfWriter writer = new PdfWriter(out);
         PdfDocument pdf = new PdfDocument(writer);
 
+        //TODO: design
+
         // HTML content
         String htmlContent = "<h1>Administrative Personnel Details</h1>" +
                 "<p><strong>ID:</strong> " + personnel.getId() + "</p>" +
