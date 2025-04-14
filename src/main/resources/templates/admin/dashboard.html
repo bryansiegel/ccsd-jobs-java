@@ -11,12 +11,12 @@
 
 <div class="row">
     <!-- Area Chart -->
-    <div class="col-xl-6 col-lg-5">
+    <div class="col">
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    <a href="/admin/elementary-schools/">Latest Administrative Personnel</a>
+                    <a href="#">Latest Administrative Personnel</a>
                 </h6>
 
             </div>
@@ -28,47 +28,47 @@
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Pie Chart -->
-    <div class="col-xl-6 col-lg-5">
+<div class="row">
+    <!-- Area Chart -->
+    <div class="col">
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    <a href="/admin/elementary-schools/">Latest Licensed Personnel</a>
+                    <a href="#">Latest Licensed Personnel</a>
                 </h6>
+
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                </div>
-                <div class="mt-4 text-center small">
+                <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Content Row -->
 <div class="row">
-    <!-- Content Column -->
-    <div class="col-lg-6 mb-4">
-        <!-- Project Card Example -->
+    <!-- Area Chart -->
+    <div class="col">
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Latest Support Professional</h6>
-            </div>
-            <div class="card-body">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    <a href="#">Latest Support Personnel</a>
+                </h6>
 
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                </div>
             </div>
         </div>
-
-        <!-- Color System -->
-
     </div>
-
-
 </div>
-
 <footer th:insert="~{admin/fragments/footer}"></footer>
