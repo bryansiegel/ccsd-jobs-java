@@ -5,27 +5,34 @@ Vue.component('administrative-personnel-view', {
             <div class="row">
                 <div class="col-md-12">
                     <div style="margin-left:200px;" v-if="administrativePersonnel">
-                        <h2>{{ administrativePersonnel.jobTitle }}</h2>
-                        <h3>Job Code: {{ administrativePersonnel.jobCode }}</h3>
-                        <h3>Reference Code: {{ administrativePersonnel.referenceCode }}</h3>
-                        <h3>Division/Unit: {{ administrativePersonnel.divisionUnit }}</h3>
-                        <h3>Classification: {{ administrativePersonnel.classification }}</h3>
-                        <h3>Terms of Employment: {{ administrativePersonnel.termsOfEmployment }}</h3>
-                        <h3>FLSA Status: {{ administrativePersonnel.flsaStatus }}</h3>
+                        <h1>{{ administrativePersonnel.jobTitle }}</h1>
+                        <h3>Job Code:</h3>
+                        <span>{{ administrativePersonnel.jobCode }}</span>
+                        <h3>Reference Code:</h3>
+                        <span>{{ administrativePersonnel.referenceCode }}</span>
+                        
+                        <h3>Division/Unit:</h3>
+                        <span>{{ administrativePersonnel.divisionUnit }}</span>
+                        
+                        <h3>Classification:</h3>
+                        <span>{{ administrativePersonnel.classification }}</span>
+                        
+                        <h3>Terms of Employment:</h3>
+                        <span v-html="administrativePersonnel.termsOfEmployment"></span>
+
+                        <h3>FLSA Status:</h3>
+                        <span> {{ administrativePersonnel.flsaStatus }}</span>
+                        
                         <h3>Position Summary:</h3>
-                        <p>{{ administrativePersonnel.positionSummary }}</p>
+                        <span v-html="administrativePersonnel.positionSummary"></span>
+
                         <h3>Essential Duties and Responsibilities:</h3>
-                        <ul>
-                            <li v-for="duty in administrativePersonnel.essentialDutiesAndResponsibilities.split(',')" :key="duty">{{ duty }}</li>
-                        </ul>
+                        <span v-html="administrativePersonnel.essentialDutiesAndResponsibilities"></span>
+
                         <h3>Position Expectations:</h3>
-                        <ul>
-                            <li v-for="expectation in administrativePersonnel.positionExpectations.split(',')" :key="expectation">{{ expectation }}</li>
-                        </ul>
+                        <span v-html="administrativePersonnel.positionExpectations"></span>
                         <h3>Position Requirements:</h3>
-                        <ul>
-                            <li v-for="requirement in administrativePersonnel.positionRequirements.split(',')" :key="requirement">{{ requirement }}</li>
-                        </ul>
+                        <span v-html="administrativePersonnel.positionRequirements"></span>
                     </div>
                     <div v-else>
                         <p>Loading...</p>

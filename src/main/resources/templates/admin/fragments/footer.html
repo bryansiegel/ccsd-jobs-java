@@ -19,6 +19,8 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
 <script src="/js/htmx.js"></script>
 
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -31,6 +33,17 @@
 <!--Year-->
 <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+<script>
+    $(document).ready(function () {
+        // jQuery('#jobsTable').DataTable();
+        $('.wysiwyg-editor').summernote({
+            height: 400, // set editor height
+            minHeight: null, // set minimum height of editor
+            maxHeight: null, // set maximum height of editor
+            focus: true // set focus to editable area after initializing summernote
+        });
+    });
 </script>
 </body>
 </html>

@@ -1,9 +1,6 @@
 package com.bryansiegel.ccsdjobsjava.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -20,11 +17,21 @@ public class AdministrativePersonnel {
     private String referenceCode;
     private String divisionUnit;
     private String classification;
+
+    @Column(columnDefinition = "TEXT")
     private String termsOfEmployment;
     private String flsaStatus;
+
+    @Column(columnDefinition = "TEXT")
     private String positionSummary;
+
+    @Column(columnDefinition = "TEXT")
     private String essentialDutiesAndResponsibilities;
+
+    @Column(columnDefinition = "TEXT")
     private String positionExpectations;
+
+    @Column(columnDefinition = "TEXT")
     private String positionRequirements;
     @CreationTimestamp
     private LocalDateTime createdAt;
