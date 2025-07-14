@@ -15,6 +15,9 @@ public class SupportProfessional {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String classCode;
+    private String jobCode;
+    private String jobTitle;
+    private String referenceCode;
     private String jobFamily;
     private String classification;
     private String termsOfEmployment;
@@ -47,6 +50,30 @@ public class SupportProfessional {
 
     public void setClassCode(String classCode) {
         this.classCode = classCode;
+    }
+
+    public String getJobCode() {
+        return jobCode;
+    }
+
+    public void setJobCode(String jobCode) {
+        this.jobCode = jobCode;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getReferenceCode() {
+        return referenceCode;
+    }
+
+    public void setReferenceCode(String referenceCode) {
+        this.referenceCode = referenceCode;
     }
 
     public String getJobFamily() {
@@ -174,6 +201,9 @@ public class SupportProfessional {
         return "SupportProfessional{" +
                 "id=" + id +
                 ", classCode='" + classCode + '\'' +
+                ", jobCode='" + jobCode + '\'' +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", referenceCode='" + referenceCode + '\'' +
                 ", jobFamily='" + jobFamily + '\'' +
                 ", classification='" + classification + '\'' +
                 ", termsOfEmployment='" + termsOfEmployment + '\'' +

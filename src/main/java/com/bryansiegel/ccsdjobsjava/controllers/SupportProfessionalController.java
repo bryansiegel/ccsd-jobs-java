@@ -80,7 +80,7 @@ public class SupportProfessionalController {
             supportProfessionalRepo.save(updatedSupportProfessional);
             return "redirect:/admin/support-professionals";
         } else {
-            return "support-professionals/not-found";
+            return "/admin/support-professionals/not-found";
         }
     }
 

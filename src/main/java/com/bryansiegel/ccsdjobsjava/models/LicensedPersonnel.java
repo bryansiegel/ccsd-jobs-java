@@ -16,6 +16,8 @@ public class LicensedPersonnel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String jobCode;
+    private String jobTitle;
+    private String referenceCode;
     private String division;
     private String classification;
     private String termsOfEmployment;
@@ -44,6 +46,22 @@ public class LicensedPersonnel {
 
     public void setJobCode(String jobCode) {
         this.jobCode = jobCode;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getReferenceCode() {
+        return referenceCode;
+    }
+
+    public void setReferenceCode(String referenceCode) {
+        this.referenceCode = referenceCode;
     }
 
     public String getDivision() {
@@ -131,6 +149,8 @@ public class LicensedPersonnel {
         return "LicensedPersonnel{" +
                 "id=" + id +
                 ", jobCode='" + jobCode + '\'' +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", referenceCode='" + referenceCode + '\'' +
                 ", division='" + division + '\'' +
                 ", classification='" + classification + '\'' +
                 ", termsOfEmployment='" + termsOfEmployment + '\'' +
